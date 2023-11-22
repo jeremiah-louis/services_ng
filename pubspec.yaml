@@ -7,6 +7,10 @@ environment:
   sdk: '>=3.0.5 <4.0.0'
 
 dependencies:
+  iconsax: ^0.0.8
+  flutter_svg: ^2.0.9
+
+
   flutter:
     sdk: flutter
 
