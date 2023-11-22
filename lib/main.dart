@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:services_ng/utils/theme/custom_theme/text_theme.dart';
+import 'package:services_ng/utils/theme/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +11,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ServicesAppTheme.lightTheme,
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Text(
+            'Hello World!',
+            style: ServicesTextTheme.lightTextTheme.titleMedium,
+          ),
         ),
       ),
     );

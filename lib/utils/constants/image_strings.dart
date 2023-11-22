@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 const String kHandshake = 'assets/images/onboarding/handshake.svg';
 const String kCactus =
     'assets/images/onboarding/verified_professionals_image.svg';

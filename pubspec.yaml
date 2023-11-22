@@ -9,6 +9,7 @@ environment:
 dependencies:
   iconsax: ^0.0.8
   flutter_svg: ^2.0.9
+  flutter_native_splash: ^2.3.6
 
 
   flutter:
