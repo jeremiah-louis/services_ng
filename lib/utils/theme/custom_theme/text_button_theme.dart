@@ -9,7 +9,7 @@ class ServicesTextButtonTheme {
         elevation: 0,
         foregroundColor: Colors.white,
         backgroundColor: kPrimaryGreenColor,
-        padding: const EdgeInsets.symmetric(vertical: 13.0),
+        padding: const EdgeInsets.symmetric(vertical: 13.0, horizontal: 13.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
