@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/utils/constants/consts.dart';
+import '../../constants/consts.dart';
 
 class ServicesTextButtonTheme {
   ServicesTextButtonTheme._();

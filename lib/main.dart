@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/utils/http_helper_functions/location.dart';
-import 'package:services_ng/utils/theme/custom_theme/text_button_theme.dart';
-import 'package:services_ng/utils/theme/custom_theme/text_theme.dart';
-import 'package:services_ng/utils/theme/theme.dart';
+import 'utils/http_helper_functions/location.dart';
+import 'utils/theme/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -19,7 +17,9 @@ class _MainAppState extends State<MainApp> {
   LocationHelper locationHelper = LocationHelper();
   @override
   void initState() {
-    locationHelper.getCurrentLocation();
+    setState(() {
+      locationHelper.getCurrentLocation();
+    });
     super.initState();
   }
 
@@ -28,9 +28,11 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ServicesAppTheme.lightTheme,
-      home: const Scaffold(
+      home: Scaffold(
         body: Center(
-          child: Text('Get Location'),
+          child: Text(
+            '${locationHelper.state ?? 'Still loading'} State, ${locationHelper.address ?? 'Still loading'}.',
+          ),
         ),
       ),
     );

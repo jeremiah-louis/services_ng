@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/utils/theme/custom_theme/outline_button_theme.dart';
-import 'package:services_ng/utils/theme/custom_theme/text_button_theme.dart';
-import 'package:services_ng/utils/theme/custom_theme/text_field_theme.dart';
-import 'package:services_ng/utils/theme/custom_theme/text_theme.dart';
+import 'custom_theme/outline_button_theme.dart';
+import 'custom_theme/text_button_theme.dart';
+import 'custom_theme/text_field_theme.dart';
+import 'custom_theme/text_theme.dart';
 
 class ServicesAppTheme {
   ServicesAppTheme._();
@@ -16,5 +16,6 @@ class ServicesAppTheme {
     textButtonTheme: ServicesTextButtonTheme.textButtonTheme,
     outlinedButtonTheme: ServicesOutlineButtonTheme.outlinedButtonTheme,
     inputDecorationTheme: ServicesTextFieldTheme.lightInputDecorationTheme,
+    bottomNavigationBarTheme: null,
   );
 }
