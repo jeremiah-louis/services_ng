@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:services_ng/utils/size_config/size_config.dart';
+import 'features/onboarding/views/onboarding_screen.dart';
 import 'utils/http_helper_functions/location.dart';
 import 'utils/theme/theme.dart';
 
@@ -6,33 +8,19 @@ void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatefulWidget {
+class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
-  State<MainApp> createState() => _MainAppState();
-}
-
-class _MainAppState extends State<MainApp> {
-  LocationHelper locationHelper = LocationHelper();
-  @override
-  void initState() {
-    setState(() {
-      locationHelper.getCurrentLocation();
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ServicesAppTheme.lightTheme,
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            '${locationHelper.state ?? 'Still loading'} State, ${locationHelper.address ?? 'Still loading'}.',
-          ),
+      home: const Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: OnboardingScreen(),
         ),
       ),
     );
