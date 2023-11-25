@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:services_ng/utils/constants/consts.dart';
 
 class ServicesTextTheme {
   // -------------------------------INTER TEXT THEME---------------------------//
@@ -14,6 +15,12 @@ class ServicesTextTheme {
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: Color(0xff505050),
+      ),
+      titleSmall: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Color(0xff636363),
       ));
 
   // Dark Text Theme

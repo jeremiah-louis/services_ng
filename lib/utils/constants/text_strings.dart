@@ -20,6 +20,7 @@ const String kForgotPasswordMessage =
 const String kResetPasswordMessage = 'Please type something you\'d remember';
 const String kChangedpasswordMessage =
     'Your password has been changed succesfully';
+const String kAlreadyHaveAccount = 'Already have an account?   ';
 
 //-----------------------------------------HOME SCREEN------------------------------------------//
 const String kCarouselTitle = 'Today\'s special';

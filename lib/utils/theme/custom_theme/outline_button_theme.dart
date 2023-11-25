@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../constants/consts.dart';
 
 class ServicesOutlineButtonTheme {
@@ -15,7 +14,7 @@ class ServicesOutlineButtonTheme {
         color: Colors.white,
         fontSize: 16,
       ),
-      side: const BorderSide(width: 0.5, color: kPrimaryGreenColor),
+      side: const BorderSide(width: 0.5, color: kSlidingGreenColor),
     ),
   );
 }
