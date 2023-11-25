@@ -1,42 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:services_ng/features/onboarding/models/intro_Page.dart';
-import 'package:services_ng/utils/constants/consts.dart';
+import 'package:provider/provider.dart';
+import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
+import 'package:services_ng/features/onboarding/models/intro_page.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../common/widgets/green_button.dart';
 import '../../../common/widgets/skip_button.dart';
+import '../../../common/widgets/smooth_page_indicator.dart';
 import '../../../utils/size_config/size_config.dart';
+import '../models/onboarding_model.dart';
 
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({
+    super.key,
+  });
 
-  @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
+    var onboarding = context.watch<OnboardingModel>();
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset(
-                  kLogo,
-                  height: getProportionateScreenHeight(70.1),
-                  width: getProportionateScreenWidth(127),
-                ),
-                const SkipButton(),
-              ],
-            ),
             PageView(
-              controller: pageController,
+              onPageChanged: (index) => onboarding.onPagesChanged(index),
+              controller: onboarding.pageController,
               children: const [
                 IntroPage(
                   body: kOnboardingBody1,
@@ -55,24 +45,40 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ],
             ),
-            Positioned(
-              top: getProportionateScreenHeight(470),
-              left: getProportionateScreenWidth(154),
-              child: SmoothPageIndicator(
-                controller: pageController,
-                count: 3,
-                effect: const ExpandingDotsEffect(
-                  activeDotColor: kSlidingGreenColor,
-                  dotColor: Color(0xffD9D9D9),
-                  dotHeight: 7,
-                  dotWidth: 8,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset(
+                  kLogo,
+                  height: getProportionateScreenHeight(70.1),
+                  width: getProportionateScreenWidth(127),
                 ),
-              ),
+                const SkipButton(),
+              ],
             ),
+            const SmoothPageIndicatorServices(),
             Positioned(
-                width: getProportionateScreenWidth(352),
-                top: getProportionateScreenHeight(666.5),
-                child: GreenButton(message: 'Next', onPressed: () {}))
+              width: getProportionateScreenWidth(352),
+              top: getProportionateScreenHeight(666.5),
+              child: onboarding.isLastPage
+                  ? GreenButton(
+                      message: 'Continue',
+                      onPressed: () async {
+                        final prefrences =
+                            await SharedPreferences.getInstance();
+                        prefrences.setBool('showHome', true);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const WelcomeScreen()));
+                      },
+                    )
+                  : GreenButton(
+                      message: 'Next',
+                      onPressed: () {
+                        onboarding.nextPage();
+                      }),
+            )
           ],
         ),
       ),

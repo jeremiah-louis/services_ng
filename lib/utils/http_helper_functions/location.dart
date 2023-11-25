@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -15,7 +14,7 @@ class LocationHelper {
       LocationPermission permission = await Geolocator.requestPermission();
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.low);
-      print(position);
+      // print(position);
       latitude = position.latitude;
       longitude = position.longitude;
       List<Placemark> placemarks =
@@ -24,7 +23,7 @@ class LocationHelper {
       address = place.country;
       state = place.administrativeArea;
     } catch (e) {
-      print(e);
+      // print(e);
     }
   }
 }

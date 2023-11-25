@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:services_ng/common/widgets/green_button.dart';
-import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
 
 class IntroPage extends StatelessWidget {
