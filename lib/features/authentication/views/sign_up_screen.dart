@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/common/widgets/green_button.dart';
+import 'package:services_ng/common/widgets/password_field_input.dart';
 import 'package:services_ng/utils/constants/consts.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
+import '../../../common/widgets/check_box.dart';
 import '../../../common/widgets/form_field_input.dart';
 import '../../../utils/size_config/size_config.dart';
 import 'package:iconsax/iconsax.dart';
@@ -64,10 +66,9 @@ class SignIn extends StatelessWidget {
                 SizedBox(
                   height: getProportionateScreenHeight(22),
                 ),
-                const FormFieldServices(
+                const PasswordFieldServices(
                   inputFieldTitle: 'Password',
                   hintText: 'your password',
-                  isObscure: true,
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(16),
@@ -75,12 +76,7 @@ class SignIn extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Checkbox(
-                      shape: const CircleBorder(),
-                      value: true,
-                      activeColor: kPrimaryGreenColor,
-                      onChanged: (value) {},
-                    ),
+                    const CheckBoxServices(),
                     Text(
                       kTermsAndCondition,
                       style: Theme.of(context).textTheme.titleSmall,

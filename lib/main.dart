@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:services_ng/features/authentication/models/password_authentication.dart';
 import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
 import 'package:services_ng/features/onboarding/models/onboarding_model.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
@@ -9,10 +10,8 @@ import 'utils/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   final pref = await SharedPreferences.getInstance();
   final showHome = pref.getBool('showHome') ?? false;
-
   runApp(MainApp(showHome: showHome));
 }
 
@@ -31,6 +30,9 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => OnboardingModel(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AuthenticationModel(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
