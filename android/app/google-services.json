@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045354707941",
+    "project_id": "services-ng",
+    "storage_bucket": "services-ng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045354707941:android:769224c98af39edea64d0c",
+        "android_client_info": {
+          "package_name": "com.example.services_ng"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMVaV5sBfw_rGi4vbmO5JeQRi0DQjaow8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
