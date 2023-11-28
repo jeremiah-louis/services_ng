@@ -41,6 +41,5 @@ class PasswordFieldServices extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }

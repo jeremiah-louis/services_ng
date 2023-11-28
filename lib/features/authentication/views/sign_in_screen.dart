@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/common/widgets/green_button.dart';
-import 'package:services_ng/common/widgets/password_field_input.dart';
-import 'package:services_ng/utils/constants/consts.dart';
-import 'package:services_ng/utils/constants/text_strings.dart';
-import '../../../common/widgets/check_box.dart';
-import '../../../common/widgets/form_field_input.dart';
-import '../../../utils/size_config/size_config.dart';
 import 'package:iconsax/iconsax.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+import '../../../common/widgets/check_box.dart';
+import '../../../common/widgets/form_field_input.dart';
+import '../../../common/widgets/green_button.dart';
+import '../../../common/widgets/password_field_input.dart';
+import '../../../utils/constants/consts.dart';
+import '../../../utils/constants/text_strings.dart';
+import '../../../utils/size_config/size_config.dart';
+
+class SignInServices extends StatelessWidget {
+  const SignInServices({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +59,6 @@ class SignUp extends StatelessWidget {
                 SizedBox(
                   height: getProportionateScreenHeight(22),
                 ),
-                const FormFieldServices(
-                  inputFieldTitle: 'Email',
-                  hintText: 'your email',
-                  isObscure: false,
-                ),
-                SizedBox(
-                  height: getProportionateScreenHeight(22),
-                ),
                 const PasswordFieldServices(
                   inputFieldTitle: 'Password',
                   hintText: 'your password',
@@ -76,11 +69,19 @@ class SignUp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const CheckBoxServices(),
-                    Text(
-                      kTermsAndCondition,
-                      style: Theme.of(context).textTheme.titleSmall,
+                    Row(
+                      children: [
+                        const CheckBoxServices(),
+                        Text(
+                          'Remember me',
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                      ],
                     ),
+                    Text(
+                      'Forgot Password',
+                      style: Theme.of(context).textTheme.titleSmall,
+                    )
                   ],
                 ),
                 SizedBox(
@@ -115,5 +116,6 @@ class SignUp extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }

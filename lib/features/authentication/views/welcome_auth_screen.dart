@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:services_ng/common/widgets/green_button.dart';
+import 'package:services_ng/features/authentication/views/sign_in_screen.dart';
 import 'package:services_ng/features/authentication/views/sign_up_screen.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
               message: 'Login',
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SignIn()));
+                    MaterialPageRoute(builder: (context) => const SignUp()));
               },
             ),
             SizedBox(
@@ -55,7 +56,12 @@ class WelcomeScreen extends StatelessWidget {
             ),
             OutlinedButtonServices(
               message: 'Sign up',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignInServices()));
+              },
             ),
           ],
         ),
