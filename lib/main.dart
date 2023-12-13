@@ -10,7 +10,7 @@ import 'features/onboarding/views/onboarding_screen.dart';
 import 'firebase_options.dart';
 import 'utils/theme/theme.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Shared Prefrences Onboarding
   final pref = await SharedPreferences.getInstance();
