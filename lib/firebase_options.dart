@@ -69,6 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1045354707941',
     projectId: 'services-ng',
     storageBucket: 'services-ng.appspot.com',
+    androidClientId: '1045354707941-0e5jis03hlukcidpc02bash772jve0k9.apps.googleusercontent.com',
+    iosClientId: '1045354707941-epaiuiqo5nbpivc6bhb15j85d67955g8.apps.googleusercontent.com',
     iosBundleId: 'com.example.servicesNg.RunnerTests',
   );
 }

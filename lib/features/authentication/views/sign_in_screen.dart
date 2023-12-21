@@ -8,6 +8,7 @@ import '../../../common/widgets/password_field_input.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/size_config/size_config.dart';
+import '../../home/views/home_screen.dart';
 
 class SignInServices extends StatelessWidget {
   const SignInServices({Key? key}) : super(key: key);
@@ -89,7 +90,12 @@ class SignInServices extends StatelessWidget {
                 ),
                 GreenButton(
                   message: 'Sign up',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => const HomeScreen())));
+                  },
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(23),
@@ -116,6 +122,5 @@ class SignInServices extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

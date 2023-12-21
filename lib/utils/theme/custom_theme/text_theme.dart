@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/utils/constants/consts.dart';
 
 class ServicesTextTheme {
   // -------------------------------INTER TEXT THEME---------------------------//

@@ -8,6 +8,4 @@ class AuthenticationModel extends ChangeNotifier {
     isObscure = !isObscure;
     notifyListeners();
   }
-
-  //--------------------------
 }

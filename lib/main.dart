@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:services_ng/features/authentication/models/authentication_repository.dart';
 import 'package:services_ng/features/authentication/models/password_authentication.dart';
 import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
 import 'package:services_ng/features/onboarding/models/onboarding_model.dart';
@@ -11,15 +12,16 @@ import 'firebase_options.dart';
 import 'utils/theme/theme.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final WidgetsBinding widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
   // Shared Prefrences Onboarding
   final pref = await SharedPreferences.getInstance();
   final showHome = pref.getBool('showHome') ?? false;
 
-  // Flutter firebase core
+  // Flutter firebase core: this basically just allows us to check if user is logged in, out or awaits email verification
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ).then((FirebaseApp value) => AuthenticationRepository());
   runApp(MainApp(showHome: showHome));
 }
 
@@ -40,6 +42,9 @@ class MainApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => AuthenticationModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AuthenticationRepository(),
         )
       ],
       child: MaterialApp(
