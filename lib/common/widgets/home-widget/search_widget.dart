@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/size_config/size_config.dart';
-import '../styles/text_field_homepage.dart';
+import '../../../utils/size_config/size_config.dart';
+import '../../styles/text_field_homepage.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({

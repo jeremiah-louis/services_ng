@@ -26,3 +26,9 @@ const String kAlreadyHaveAccount = 'Already have an account?   ';
 const String kCarouselTitle = 'Today\'s special';
 const String kCarouselText =
     'Get a discount for every order, only valid for today';
+
+const String kCategoryText1 = 'AC Repair';
+const String kCategoryText2 = 'Appliances';
+const String kCategoryText3 = 'Cleaning';
+const String kCategoryText4 = 'Plumbing';
+const String kCategoryText5 = 'Electronics';

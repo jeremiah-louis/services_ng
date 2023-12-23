@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/features/home/views/home_screen.dart';
 
-class NavigationContoller extends ChangeNotifier {
+class NavigationController extends ChangeNotifier {
   int selectedIndex = 0;
   List screens = [
     const HomeScreen(),

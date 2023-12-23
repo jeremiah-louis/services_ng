@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:services_ng/common/widgets/green_button.dart';
+import 'package:services_ng/common/widgets/login-widget/green_button.dart';
 import 'package:services_ng/features/authentication/views/sign_in_screen.dart';
 import 'package:services_ng/features/authentication/views/sign_up_screen.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
-import '../../../common/widgets/outlined_button.dart';
+import '../../../common/widgets/login-widget/outlined_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

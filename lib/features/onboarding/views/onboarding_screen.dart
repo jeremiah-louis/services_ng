@@ -6,9 +6,9 @@ import 'package:services_ng/features/onboarding/models/intro_page.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../common/widgets/green_button.dart';
-import '../../../common/widgets/skip_button.dart';
-import '../../../common/widgets/smooth_page_indicator.dart';
+import '../../../common/widgets/login-widget/green_button.dart';
+import '../../../common/widgets/onboarding-widget/skip_button.dart';
+import '../../../common/widgets/onboarding-widget/smooth_page_indicator.dart';
 import '../../../utils/size_config/size_config.dart';
 import '../models/onboarding_model.dart';
 

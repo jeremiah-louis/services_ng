@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../utils/constants/consts.dart';
+import '../../../utils/constants/consts.dart';
 
 class SettingsButtonHomePage extends StatelessWidget {
   const SettingsButtonHomePage({

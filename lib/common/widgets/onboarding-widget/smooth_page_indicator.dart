@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../features/onboarding/models/onboarding_model.dart';
-import '../../utils/constants/consts.dart';
-import '../../utils/size_config/size_config.dart';
+import '../../../features/onboarding/models/onboarding_model.dart';
+import '../../../utils/constants/consts.dart';
+import '../../../utils/size_config/size_config.dart';
 
 class SmoothPageIndicatorServices extends StatelessWidget {
   const SmoothPageIndicatorServices({

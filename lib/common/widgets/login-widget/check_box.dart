@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants/consts.dart';
+import '../../../utils/constants/consts.dart';
 
 class CheckBoxServices extends StatelessWidget {
   const CheckBoxServices({

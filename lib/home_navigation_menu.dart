@@ -9,10 +9,10 @@ class HomeNavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var navigationController = context.watch<NavigationContoller>();
+    var navigationController = context.watch<NavigationController>();
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-          height: getProportionateScreenHeight(75),
+          height: getProportionateScreenHeight(60),
           selectedIndex: navigationController.selectedIndex,
           onDestinationSelected: (value) =>
               navigationController.onDestinationSelected(value),

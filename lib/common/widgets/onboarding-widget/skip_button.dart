@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../features/onboarding/models/onboarding_model.dart';
+import '../../../features/onboarding/models/onboarding_model.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({

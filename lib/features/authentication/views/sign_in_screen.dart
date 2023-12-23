@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:services_ng/home_navigation_menu.dart';
 
-import '../../../common/widgets/check_box.dart';
-import '../../../common/widgets/form_field_input.dart';
-import '../../../common/widgets/green_button.dart';
-import '../../../common/widgets/password_field_input.dart';
+import '../../../common/widgets/login-widget/check_box.dart';
+import '../../../common/widgets/login-widget/form_field_input.dart';
+import '../../../common/widgets/login-widget/green_button.dart';
+import '../../../common/widgets/login-widget/password_field_input.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/size_config/size_config.dart';

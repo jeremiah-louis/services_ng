@@ -8,3 +8,5 @@ const Color kGreyTextColor = Color(0xffF5F5F5);
 const Color kWhiteTextColor = Color(0xffFAFAFA);
 const Color kWhiteBellColor = Color(0xffF7F7F7);
 const Color kSearchIconColor = Color(0xff636363);
+const Color kNeutralDarkColor = Color(0xff323232);
+const Color kNeutralDarkColor700 = Color(0xff505050);

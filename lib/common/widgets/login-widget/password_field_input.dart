@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:services_ng/features/authentication/models/password_authentication.dart';
-import '../../utils/constants/consts.dart';
+import '../../../utils/constants/consts.dart';
 
 class PasswordFieldServices extends StatelessWidget {
   final String inputFieldTitle;

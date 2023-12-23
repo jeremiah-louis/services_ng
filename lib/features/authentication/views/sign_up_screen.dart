@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:services_ng/common/widgets/green_button.dart';
-import 'package:services_ng/common/widgets/password_field_input.dart';
+import 'package:services_ng/common/widgets/login-widget/green_button.dart';
+import 'package:services_ng/common/widgets/login-widget/password_field_input.dart';
 import 'package:services_ng/utils/constants/consts.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
-import '../../../common/widgets/check_box.dart';
-import '../../../common/widgets/form_field_input.dart';
+import '../../../common/widgets/login-widget/check_box.dart';
+import '../../../common/widgets/login-widget/form_field_input.dart';
 import '../../../utils/size_config/size_config.dart';
 import 'package:iconsax/iconsax.dart';
 
