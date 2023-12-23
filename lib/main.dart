@@ -6,6 +6,7 @@ import 'package:services_ng/features/authentication/models/password_authenticati
 import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
 import 'package:services_ng/features/home/controllers/navigation_controller.dart';
 import 'package:services_ng/features/onboarding/models/onboarding_model.dart';
+import 'package:services_ng/utils/http_helper_functions/location.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'features/onboarding/views/onboarding_screen.dart';
@@ -23,6 +24,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ).then((FirebaseApp value) => AuthenticationRepository());
+
+  LocationHelper locationHelper = LocationHelper();
+  locationHelper.getCurrentLocation();
   runApp(MainApp(showHome: showHome));
 }
 

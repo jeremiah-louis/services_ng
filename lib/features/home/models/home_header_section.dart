@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
-
+import 'package:services_ng/utils/http_helper_functions/location.dart';
 import '../../../common/styles/decoration_home_page_top_section.dart';
 import '../../../common/widgets/outlined_icon.dart';
 import '../../../common/widgets/search_widget.dart';
@@ -56,7 +56,7 @@ class HomeHeaderSection extends StatelessWidget {
                           width: 4,
                         ),
                         Text(
-                          'Lagos, Nigeria',
+                          '${LocationHelper.state} state, ${LocationHelper.address}',
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium

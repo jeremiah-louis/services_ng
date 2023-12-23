@@ -2,10 +2,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
 class LocationHelper {
-  double? latitude;
-  double? longitude;
-  String? address = '';
-  String? state = '';
+  static double? latitude;
+  static double? longitude;
+  static String? address = '';
+  static String? state = '';
 
   // get current latitude $ longitude values
 
@@ -23,7 +23,7 @@ class LocationHelper {
       address = place.country;
       state = place.administrativeArea;
     } catch (e) {
-      // print(e);
+      print(e);
     }
   }
 }
