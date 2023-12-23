@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:services_ng/home_navigation_menu.dart';
 
 import '../../../common/widgets/check_box.dart';
 import '../../../common/widgets/form_field_input.dart';
@@ -94,7 +95,8 @@ class SignInServices extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => const HomeScreen())));
+                            builder: ((context) =>
+                                const HomeNavigationMenu())));
                   },
                 ),
                 SizedBox(

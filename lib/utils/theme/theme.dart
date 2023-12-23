@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/utils/constants/consts.dart';
+import 'package:services_ng/utils/theme/custom_theme/bottom_navigation_bar_theme.dart';
 import 'custom_theme/outline_button_theme.dart';
 import 'custom_theme/text_button_theme.dart';
 import 'custom_theme/text_field_theme.dart';
@@ -17,7 +18,7 @@ class ServicesAppTheme {
       textButtonTheme: ServicesTextButtonTheme.textButtonTheme,
       outlinedButtonTheme: ServicesOutlineButtonTheme.outlinedButtonTheme,
       inputDecorationTheme: ServicesTextFieldTheme.lightInputDecorationTheme,
-      bottomNavigationBarTheme: null,
+      navigationBarTheme: ServicesBottomNavigationBarTheme.myNavigationBarTheme,
       textSelectionTheme: const TextSelectionThemeData(
         selectionColor: kSlidingGreenColor,
       ));

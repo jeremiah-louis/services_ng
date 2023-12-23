@@ -7,7 +7,7 @@ Decoration kGreenTopDecoration = BoxDecoration(
   image: DecorationImage(
     fit: BoxFit.fill,
     colorFilter:
-        ColorFilter.mode(Colors.white.withOpacity(0.15), BlendMode.srcIn),
+        ColorFilter.mode(Colors.black.withOpacity(0.05), BlendMode.srcIn),
     image: const AssetImage(kVector1),
   ),
   color: kPrimaryGreenColor,

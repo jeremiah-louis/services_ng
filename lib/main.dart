@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:services_ng/features/authentication/models/authentication_repository.dart';
 import 'package:services_ng/features/authentication/models/password_authentication.dart';
 import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
+import 'package:services_ng/features/home/controllers/navigation_controller.dart';
 import 'package:services_ng/features/onboarding/models/onboarding_model.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,7 +46,10 @@ class MainApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => AuthenticationRepository(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NavigationContoller(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
