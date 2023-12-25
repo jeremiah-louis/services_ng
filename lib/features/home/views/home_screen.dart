@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.only(
                 left: getProportionateScreenWidth(21),
               ),
-              child: SubCategoriesWidget(),
+              child: const SubCategoriesWidget(),
             )
           ],
         ),

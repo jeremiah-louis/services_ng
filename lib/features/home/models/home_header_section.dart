@@ -72,9 +72,18 @@ class HomeHeaderSection extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Icon(
-                      Iconsax.notification,
-                      color: kWhiteBellColor,
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(
+                          Iconsax.notification,
+                          color: kWhiteBellColor,
+                        ),
+                        Icon(
+                          Iconsax.save_21,
+                          color: kWhiteBellColor,
+                        ),
+                      ],
                     ),
                   ],
                 ),
