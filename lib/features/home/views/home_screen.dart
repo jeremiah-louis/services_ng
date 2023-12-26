@@ -8,9 +8,11 @@ import 'package:services_ng/utils/constants/consts.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
-import '../../../common/widgets/home-widget/carousel_widget.dart';
-import '../../../common/widgets/home-widget/categories_page.dart';
 import '../models/home_header_section.dart';
+import '../widgets/carousel_section.dart';
+import '../widgets/categories_section.dart';
+import '../widgets/popular_services_section.dart';
+import '../widgets/sub_categories_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,106 +24,26 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // -----------------------**HomeHeaderSection:**------------------------------//
+            // - Displays key elements like location, Notifications, bookmarks, a search bar and a filter button.
             const HomeHeaderSection(),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(21)),
-              child: const Carousel(),
-            ),
+            // ------------------------**CarouselSection:**-------------------------------//
+            // - Showcases featured services or promotional content in a visually engaging format.
+            const CarouselSection(),
             SizedBox(height: getProportionateScreenHeight(27)),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(21)),
-              child: const CategoriesPane(),
-            ),
+            // -----------------------**CategoriesSection:**------------------------------//
+            // - Organizes services into distinct categories for easy navigation.
+            const CategoriesSection(),
             SizedBox(height: getProportionateScreenHeight(40)),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(21)),
-              child: Column(
-                children: [
-                  const Labels(title: 'Popular services', seeall: 'See all'),
-                  SizedBox(height: getProportionateScreenHeight(12)),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: getProportionateScreenWidth(21),
-              ),
-              child: const SubCategoriesWidget(),
-            )
+            // The Popular Services section of the homescreen
+            const PopularServicesSection(),
+            SizedBox(height: getProportionateScreenHeight(12)),
+            // -----------------------**SubCategoriesSection:**------------------------------//
+            // - Filters service artisans into distinct categories for easy selection.
+            const SubCategories()
           ],
         ),
       ),
-    );
-  }
-}
-
-class SubCategoriesWidget extends StatelessWidget {
-  const SubCategoriesWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    var subCategories = context.watch<SubCategoriesList>();
-    return SizedBox(
-      height: 26,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          itemCount: 6,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(right: getProportionateScreenWidth(10)),
-              child: GestureDetector(
-                  onTap: () {
-                    subCategories.updateCurrentIndex(index);
-                  },
-                  child: index == subCategories.currentIndex
-                      ? Container(
-                          height: getProportionateScreenHeight(26),
-                          width: getProportionateScreenWidth(56),
-                          decoration: BoxDecoration(
-                              color: kPrimaryGreenColor,
-                              borderRadius:
-                                  BorderRadiusDirectional.circular(10)),
-                          child: Center(
-                            child: Text(
-                              'All',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall
-                                  ?.copyWith(color: Colors.white),
-                            ),
-                          ),
-                        )
-                      : Container(
-                          height: getProportionateScreenHeight(26),
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadiusDirectional.circular(10),
-                              border: Border.all(
-                                  width: 0.5, color: kPrimaryGreenColor)),
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: getProportionateScreenWidth(6)),
-                              child: Text(
-                                'Plumbing',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
-                                    ?.copyWith(color: kPrimaryGreenColor),
-                              ),
-                            ),
-                          ),
-                        )),
-            );
-          }),
     );
   }
 }

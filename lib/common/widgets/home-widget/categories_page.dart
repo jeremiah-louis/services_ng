@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../features/home/widgets/categories_page.dart';
+import '../../../features/home/widgets/categories_widget.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/text_strings.dart';

@@ -72,16 +72,22 @@ class HomeHeaderSection extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Iconsax.notification,
                           color: kWhiteBellColor,
+                          size: 18,
                         ),
-                        Icon(
-                          Iconsax.save_21,
-                          color: kWhiteBellColor,
+                        SizedBox(
+                          width: getProportionateScreenWidth(8.53),
+                        ),
+                        SvgPicture.asset(
+                          kSaveIcon,
+                          width: getProportionateScreenWidth(16),
+                          height: getProportionateScreenHeight(16),
+                          colorFilter: const ColorFilter.mode(
+                              kYellowColor, BlendMode.color),
                         ),
                       ],
                     ),

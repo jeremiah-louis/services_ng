@@ -17,10 +17,10 @@ class Labels extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontSize: 16, color: kNeutralDarkColor),
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontSize: 16,
+              color: kNeutralDarkColor,
+              fontWeight: FontWeight.w600),
         ),
         Text(
           seeall,

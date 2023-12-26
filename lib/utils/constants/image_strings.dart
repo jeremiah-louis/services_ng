@@ -17,3 +17,4 @@ const String kCategoriesElectronics =
     'assets/images/home/categories-electronics.svg';
 const String kCategoriesPlumbing = 'assets/images/home/categories-plumbing.svg';
 const String kBlackMan = 'assets/images/home/black-man.svg';
+const String kSaveIcon = 'assets/images/home/group_save_icon.svg';

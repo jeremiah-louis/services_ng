@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,23 +15,37 @@ import 'features/onboarding/views/onboarding_screen.dart';
 import 'firebase_options.dart';
 import 'utils/theme/theme.dart';
 
+//Asynchronous main function, indicating it returns a Future
 Future<void> main() async {
+  // Ensure Flutter widgets are initialized before accessing them
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
-  // Shared Prefrences Onboarding
+
+  // Shared Preferences for onboarding logic
+  // Get an instance of SharedPreferences
   final pref = await SharedPreferences.getInstance();
+  // Retrieve a boolean value indicating whether to show the home screen
   final showHome = pref.getBool('showHome') ?? false;
 
-  // Flutter firebase core: this basically just allows us to check if user is logged in, out or awaits email verification
+  // Initialize Firebase
+  // Initialize Firebase app with platform-specific options
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ).then((FirebaseApp value) => AuthenticationRepository());
+  ).then((FirebaseApp value) =>
+      AuthenticationRepository()); // Create an AuthenticationRepository instance upon completion
+
+  // Location handling
   LocationHelper locationHelper = LocationHelper();
-  locationHelper.getCurrentLocation();
+  // Fetch current location asynchronously
+  await locationHelper.getCurrentLocation();
+
+  // Run the app
+  // Launch the MainApp widget, passing the showHome flag
   runApp(MainApp(showHome: showHome));
 }
 
 class MainApp extends StatelessWidget {
+  // Flag indicating whether to show the home screen directly
   final bool showHome;
   const MainApp({
     super.key,
@@ -41,30 +54,27 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Configure screen size-related calculations
     SizeConfig().init(context);
+
+    // Provider setup for state management
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => OnboardingModel(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AuthenticationModel(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AuthenticationRepository(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => NavigationController(),
-        ),
+        ChangeNotifierProvider(create: (context) => OnboardingModel()),
+        ChangeNotifierProvider(create: (context) => AuthenticationModel()),
+        ChangeNotifierProvider(create: (context) => AuthenticationRepository()),
+        ChangeNotifierProvider(create: (context) => NavigationController()),
         ChangeNotifierProvider(create: (context) => CarouselControllerSlider()),
         ChangeNotifierProvider(create: (context) => SubCategoriesList())
       ],
+      // Core app structure
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ServicesAppTheme.lightTheme,
         home: showHome
-            ? const WelcomeScreen()
+            ? const WelcomeScreen() //Display WelcomeScreen if showHome is true
             : const Scaffold(
+                // Show OnboardingScreen otherwise, within a basic scaffold
                 body: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: OnboardingScreen(),

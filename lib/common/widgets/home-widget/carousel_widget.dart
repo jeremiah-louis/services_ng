@@ -21,10 +21,8 @@ class Carousel extends StatelessWidget {
       ),
       Text(
         'Special Offers',
-        style: Theme.of(context)
-            .textTheme
-            .titleMedium
-            ?.copyWith(color: const Color(0xff323232)),
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            color: const Color(0xff323232), fontWeight: FontWeight.w600),
       ),
       SizedBox(
         height: getProportionateScreenHeight(9),
