@@ -9,6 +9,7 @@ import '../../../common/widgets/home-widget/settings_button_homepage.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/size_config/size_config.dart';
+import '../views/notification_page.dart';
 
 class HomeHeaderSection extends StatelessWidget {
   const HomeHeaderSection({
@@ -65,19 +66,23 @@ class HomeHeaderSection extends StatelessWidget {
                         const SizedBox(
                           width: 4,
                         ),
-                        SvgPicture.asset(
-                          kDropdownicon,
-                          colorFilter: const ColorFilter.mode(
-                              kYellowColor, BlendMode.color),
-                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        const Icon(
-                          Iconsax.notification,
-                          color: kWhiteBellColor,
-                          size: 18,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) =>
+                                        const NotificationPage())));
+                          },
+                          child: const Icon(
+                            Iconsax.notification,
+                            color: kWhiteBellColor,
+                            size: 18,
+                          ),
                         ),
                         SizedBox(
                           width: getProportionateScreenWidth(8.53),

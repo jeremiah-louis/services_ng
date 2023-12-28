@@ -24,23 +24,24 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // -----------------------**HomeHeaderSection:**------------------------------//
+            // -----------------------** HomeHeaderSection **------------------------------//
             // - Displays key elements like location, Notifications, bookmarks, a search bar and a filter button.
             const HomeHeaderSection(),
-            // ------------------------**CarouselSection:**-------------------------------//
+            // ------------------------** CarouselSection **-------------------------------//
             // - Showcases featured services or promotional content in a visually engaging format.
             const CarouselSection(),
             SizedBox(height: getProportionateScreenHeight(27)),
-            // -----------------------**CategoriesSection:**------------------------------//
+            // -----------------------** CategoriesSection **------------------------------//
             // - Organizes services into distinct categories for easy navigation.
             const CategoriesSection(),
             SizedBox(height: getProportionateScreenHeight(40)),
             // The Popular Services section of the homescreen
             const PopularServicesSection(),
             SizedBox(height: getProportionateScreenHeight(12)),
-            // -----------------------**SubCategoriesSection:**------------------------------//
+            // -----------------------** SubCategoriesSection **------------------------------//
             // - Filters service artisans into distinct categories for easy selection.
-            const SubCategories()
+            const SubCategories(),
+            SizedBox(height: getProportionateScreenHeight(24)),
           ],
         ),
       ),

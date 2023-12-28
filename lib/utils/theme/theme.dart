@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/utils/constants/consts.dart';
+import 'package:services_ng/utils/theme/custom_theme/app_bar_Theme.dart';
 import 'package:services_ng/utils/theme/custom_theme/bottom_navigation_bar_theme.dart';
 import 'custom_theme/outline_button_theme.dart';
 import 'custom_theme/text_button_theme.dart';
@@ -9,6 +10,7 @@ import 'custom_theme/text_theme.dart';
 class ServicesAppTheme {
   ServicesAppTheme._();
   static ThemeData lightTheme = ThemeData(
+      appBarTheme: ServicesAppBarTheme.appBarTheme,
       textTheme: ServicesTextTheme.lightTextTheme,
       scaffoldBackgroundColor: const Color(0xffFFFFFF),
       primaryColor: const Color(0xff15CE5B),

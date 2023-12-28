@@ -29,6 +29,11 @@ class SubCategoriesWidget extends StatelessWidget {
                 onTap: () {
                   // Update the selected index in the SubCategoriesList model.
                   subCategories.updateCurrentIndex(index);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) =>
+                              subCategories.popularServicesPage[index])));
                 },
                 child: Container(
                   height: getProportionateScreenHeight(26),

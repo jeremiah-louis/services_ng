@@ -39,7 +39,7 @@ Future<void> main() async {
   // Fetch current location asynchronously
   await locationHelper.getCurrentLocation();
 
-  // Run the app
+  // Runs the app
   // Launch the MainApp widget, passing the showHome flag
   runApp(MainApp(showHome: showHome));
 }

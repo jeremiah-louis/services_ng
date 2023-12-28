@@ -20,7 +20,7 @@ class Labels extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontSize: 16,
               color: kNeutralDarkColor,
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w500),
         ),
         Text(
           seeall,
