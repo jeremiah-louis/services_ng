@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:services_ng/utils/http_helper_functions/location.dart';
+import 'package:services_ng/utils/named_routes.dart';
 import '../../../common/styles/decoration_home_page_top_section.dart';
 import '../../../common/widgets/home-widget/outlined_icon.dart';
 import '../../../common/widgets/home-widget/search_widget.dart';
@@ -72,11 +73,8 @@ class HomeHeaderSection extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) =>
-                                        const NotificationPage())));
+                            Navigator.pushNamed(
+                                context, ServicesNamedRoutes.notificationPage);
                           },
                           child: const Icon(
                             Iconsax.notification,
@@ -87,12 +85,12 @@ class HomeHeaderSection extends StatelessWidget {
                         SizedBox(
                           width: getProportionateScreenWidth(8.53),
                         ),
-                        SvgPicture.asset(
-                          kSaveIcon,
-                          width: getProportionateScreenWidth(16),
-                          height: getProportionateScreenHeight(16),
-                          colorFilter: const ColorFilter.mode(
-                              kYellowColor, BlendMode.color),
+                        GestureDetector(
+                          child: SvgPicture.asset(
+                            kSaveIcon,
+                            width: getProportionateScreenWidth(16),
+                            height: getProportionateScreenHeight(16),
+                          ),
                         ),
                       ],
                     ),

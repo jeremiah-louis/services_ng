@@ -67,10 +67,7 @@ class OnboardingScreen extends StatelessWidget {
                         final prefrences =
                             await SharedPreferences.getInstance();
                         prefrences.setBool('showHome', true);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const WelcomeScreen()));
+                        Navigator.pushNamed(context, '/second');
                       },
                     )
                   : GreenButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:services_ng/home_navigation_menu.dart';
+import 'package:services_ng/utils/named_routes.dart';
 
 import '../../../common/widgets/login-widget/check_box.dart';
 import '../../../common/widgets/login-widget/form_field_input.dart';
@@ -92,11 +93,8 @@ class SignInServices extends StatelessWidget {
                 GreenButton(
                   message: 'Sign up',
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) =>
-                                const HomeNavigationMenu())));
+                    Navigator.pushNamed(
+                        context, ServicesNamedRoutes.homenavmenu);
                   },
                 ),
                 SizedBox(

@@ -8,11 +8,16 @@ import 'package:services_ng/features/home/controllers/carousel_controller.dart';
 import 'package:services_ng/features/home/controllers/navigation_controller.dart';
 import 'package:services_ng/features/onboarding/models/onboarding_model.dart';
 import 'package:services_ng/utils/http_helper_functions/location.dart';
+import 'package:services_ng/utils/named_routes.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'features/authentication/views/sign_in_screen.dart';
+import 'features/authentication/views/sign_up_screen.dart';
 import 'features/home/controllers/sub_categories.dart';
+import 'features/home/views/notification_page.dart';
 import 'features/onboarding/views/onboarding_screen.dart';
 import 'firebase_options.dart';
+import 'home_navigation_menu.dart';
 import 'utils/theme/theme.dart';
 
 //Asynchronous main function, indicating it returns a Future
@@ -71,15 +76,25 @@ class MainApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ServicesAppTheme.lightTheme,
-        home: showHome
-            ? const WelcomeScreen() //Display WelcomeScreen if showHome is true
-            : const Scaffold(
-                // Show OnboardingScreen otherwise, within a basic scaffold
-                body: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: OnboardingScreen(),
+        initialRoute: ServicesNamedRoutes.initialRoute,
+        routes: {
+          ServicesNamedRoutes.initialRoute: (context) => showHome
+              ? const WelcomeScreen()
+              : const Scaffold(
+                  // Show OnboardingScreen otherwise, within a basic scaffold
+                  body: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: OnboardingScreen(),
+                  ),
                 ),
-              ),
+          ServicesNamedRoutes.welcomeScreen: (context) => const WelcomeScreen(),
+          ServicesNamedRoutes.signup: (context) => const SignUp(),
+          ServicesNamedRoutes.signin: (context) => const SignInServices(),
+          ServicesNamedRoutes.homenavmenu: (context) =>
+              const HomeNavigationMenu(),
+          ServicesNamedRoutes.notificationPage: (context) =>
+              const NotificationPage(),
+        },
       ),
     );
   }

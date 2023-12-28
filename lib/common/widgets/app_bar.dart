@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyCustomAppBar extends StatelessWidget {
+class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
   final String title;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
@@ -20,9 +23,13 @@ class MyCustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title),
+      leadingWidth: 24,
       leading: prefixIcon != null
           ? IconButton(
-              icon: Icon(prefixIcon),
+              icon: Icon(
+                prefixIcon,
+                size: 24,
+              ),
               onPressed: onBackPressed ?? () => Navigator.of(context).pop(),
             )
           : null,

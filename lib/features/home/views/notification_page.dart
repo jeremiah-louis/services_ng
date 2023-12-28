@@ -8,11 +8,12 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: MyCustomAppBar(
+      appBar: MyCustomAppBar(
         title: 'Notifications',
-        suffixIcon: Iconsax.more,
+        suffixIcon: Iconsax.more4,
         prefixIcon: Iconsax.arrow_left_24,
       ),
+      body: Column(),
     );
   }
 }
