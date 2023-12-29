@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
+import 'package:services_ng/common/widgets/app_bar.dart';
 import 'package:services_ng/common/widgets/home-widget/labels_widget.dart';
 import 'package:services_ng/features/home/controllers/sub_categories.dart';
 import 'package:services_ng/utils/constants/consts.dart';
@@ -20,29 +21,49 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // -----------------------** HomeHeaderSection **------------------------------//
-            // - Displays key elements like location, Notifications, bookmarks, a search bar and a filter button.
-            const HomeHeaderSection(),
-            // ------------------------** CarouselSection **-------------------------------//
-            // - Showcases featured services or promotional content in a visually engaging format.
-            const CarouselSection(),
-            SizedBox(height: getProportionateScreenHeight(27)),
-            // -----------------------** CategoriesSection **------------------------------//
-            // - Organizes services into distinct categories for easy navigation.
-            const CategoriesSection(),
-            SizedBox(height: getProportionateScreenHeight(40)),
-            // The Popular Services section of the homescreen
-            const PopularServicesSection(),
-            SizedBox(height: getProportionateScreenHeight(12)),
-            // -----------------------** SubCategoriesSection **------------------------------//
-            // - Filters service artisans into distinct categories for easy selection.
-            const SubCategories(),
-            SizedBox(height: getProportionateScreenHeight(24)),
-          ],
+      body: MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: NestedScrollView(
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                backgroundColor: Colors.transparent,
+                automaticallyImplyLeading: false,
+                floating: true,
+                pinned: false,
+                expandedHeight: 540,
+                flexibleSpace: ListView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    // -----------------------** HomeHeaderSection **------------------------------//
+                    // - Displays key elements like location, Notifications, bookmarks, a search bar and a filter button.
+                    const HomeHeaderSection(),
+                    // ------------------------** CarouselSection **-------------------------------//
+                    // - Showcases featured services or promotional content in a visually engaging format.
+                    const CarouselSection(),
+                    SizedBox(height: getProportionateScreenHeight(27)),
+                    // -----------------------** CategoriesSection **------------------------------//
+                    // - Organizes services into distinct categories for easy navigation.
+                    const CategoriesSection(),
+                    //
+                    // The Popular Services section of the homescreen
+
+                    // -----------------------** SubCategoriesSection **------------------------------//
+                    // - Filters service artisans into distinct categories for easy selection.
+                  ],
+                ),
+              )
+            ];
+          },
+          body: ListView(
+            children: [
+              SizedBox(height: getProportionateScreenHeight(40)),
+              const PopularServicesSection(),
+              SizedBox(height: getProportionateScreenHeight(12)),
+              const SubCategories()
+            ],
+          ),
         ),
       ),
     );
