@@ -16,5 +16,6 @@ const String kCategoriesCleaning = 'assets/images/home/categories-cleaning.svg';
 const String kCategoriesElectronics =
     'assets/images/home/categories-electronics.svg';
 const String kCategoriesPlumbing = 'assets/images/home/categories-plumbing.svg';
-const String kBlackMan = 'assets/images/home/black-man.svg';
+const String kBlackMan = 'assets/images/home/blackman-2.png';
 const String kSaveIcon = 'assets/images/home/group_save_icon.svg';
+const String kStarIcon = 'assets/images/home/star.svg';

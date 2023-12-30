@@ -9,7 +9,7 @@ import 'package:services_ng/utils/constants/consts.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
-import '../models/home_header_section.dart';
+import '../widgets/home_header_section.dart';
 import '../widgets/carousel_section.dart';
 import '../widgets/categories_section.dart';
 import '../widgets/popular_services_section.dart';
@@ -28,10 +28,9 @@ class HomeScreen extends StatelessWidget {
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                backgroundColor: Colors.transparent,
                 automaticallyImplyLeading: false,
                 floating: true,
-                pinned: false,
+                pinned: true,
                 expandedHeight: 540,
                 flexibleSpace: ListView(
                   physics: const NeverScrollableScrollPhysics(),
@@ -57,15 +56,113 @@ class HomeScreen extends StatelessWidget {
             ];
           },
           body: ListView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
               SizedBox(height: getProportionateScreenHeight(40)),
               const PopularServicesSection(),
               SizedBox(height: getProportionateScreenHeight(12)),
-              const SubCategories()
+              const SubCategories(),
+              SizedBox(
+                height: getProportionateScreenHeight(844),
+                child: ListView.builder(
+                  // physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (context, index) => Container(
+                      margin: const EdgeInsets.all(14),
+                      padding: const EdgeInsets.all(14),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const CircleAvatar(
+                                radius: 40,
+                                backgroundImage: AssetImage(kBlackMan),
+                              ),
+                              SizedBox(width: getProportionateScreenWidth(8)),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const DetailsText(
+                                    color: kNeutralDarkColor,
+                                    text: 'Joshua Nlebemchukwu',
+                                    weight: FontWeight.normal,
+                                    size: 10,
+                                  ),
+                                  SizedBox(
+                                      width: getProportionateScreenHeight(4)),
+                                  const DetailsText(
+                                    color: kNeutralDarkColor,
+                                    text: 'Joshua Nlebemchukwu',
+                                    weight: FontWeight.w400,
+                                    size: 12,
+                                  ),
+                                  SizedBox(
+                                      width: getProportionateScreenHeight(4)),
+                                  const DetailsText(
+                                    color: kPrimaryGreenColor,
+                                    text: 'Joshua Nlebemchukwu',
+                                    weight: FontWeight.w600,
+                                    size: 12,
+                                  ),
+                                  SizedBox(
+                                      width: getProportionateScreenHeight(7)),
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(kStarIcon),
+                                      SizedBox(
+                                          width:
+                                              getProportionateScreenWidth(2)),
+                                      const Text('data'),
+                                      SizedBox(
+                                          width:
+                                              getProportionateScreenWidth(2)),
+                                      const Text('data')
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          SvgPicture.asset(
+                            kSaveIcon,
+                            colorFilter: const ColorFilter.mode(
+                                Colors.black, BlendMode.srcIn),
+                            width: getProportionateScreenWidth(16),
+                            height: getProportionateScreenHeight(16),
+                          ),
+                        ],
+                      )),
+                ),
+              )
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class DetailsText extends StatelessWidget {
+  final String text;
+  final Color color;
+  final double size;
+  final FontWeight weight;
+  const DetailsText({
+    super.key,
+    required this.text,
+    required this.color,
+    required this.weight,
+    required this.size,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: Theme.of(context)
+            .textTheme
+            .titleSmall
+            ?.copyWith(fontSize: size, color: color, fontWeight: weight));
   }
 }
