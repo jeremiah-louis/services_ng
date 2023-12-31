@@ -2,88 +2,105 @@ class ServicePageContent {
   final String name;
   final String serviceRendered;
   final String price;
+  final double ratings;
 
   ServicePageContent({
     required this.name,
     required this.serviceRendered,
     required this.price,
+    required this.ratings,
   });
 }
 
 final List<ServicePageContent> services = [
   ServicePageContent(
-    name: "All Things Fixed",
+    name: "Service Provider 1",
     serviceRendered: "Repairing",
-    price: "60 per hour",
+    price: "₦79 per hour",
+    ratings: 4.2,
   ),
   ServicePageContent(
-    name: "Sparkle Squad",
+    name: "Service Provider 2",
     serviceRendered: "Cleaning",
-    price: "30 per hour",
+    price: "₦32 per hour",
+    ratings: 3.6,
   ),
   ServicePageContent(
-    name: "Tech Revive",
+    name: "Service Provider 3",
     serviceRendered: "Electronics",
-    price: "75 per hour",
+    price: "₦54 per hour",
+    ratings: 4.8,
   ),
   ServicePageContent(
-    name: "Leak Busters",
+    name: "Service Provider 4",
     serviceRendered: "Plumbing",
-    price: "80 per hour",
+    price: "₦43 per hour",
+    ratings: 4.1,
   ),
   ServicePageContent(
-    name: "Wash & Wonder",
+    name: "Service Provider 5",
     serviceRendered: "Washing",
-    price: "25 per load",
+    price: "₦65 per hour",
+    ratings: 3.9,
   ),
   ServicePageContent(
-    name: "Home Hero Helpers",
-    serviceRendered: "Repairing, Cleaning",
-    price: "50 per hour (combo rate)",
+    name: "Service Provider 6",
+    serviceRendered: "Repairing",
+    price: "₦45 per hour",
+    ratings: 4.4,
   ),
   ServicePageContent(
-    name: "Spark & Shine",
+    name: "Service Provider 7",
     serviceRendered: "Cleaning",
-    price: "40 per hour",
+    price: "₦27 per hour",
+    ratings: 4.0,
   ),
   ServicePageContent(
-    name: "Gadget Gurus",
+    name: "Service Provider 8",
     serviceRendered: "Electronics",
-    price: "50 per hour",
+    price: "₦78 per hour",
+    ratings: 4.7,
   ),
   ServicePageContent(
-    name: "Flow Masters",
+    name: "Service Provider 9",
     serviceRendered: "Plumbing",
-    price: "100 per hour",
+    price: "₦64 per hour",
+    ratings: 3.8,
   ),
   ServicePageContent(
-    name: "Fresh & Fold Express",
+    name: "Service Provider 10",
     serviceRendered: "Washing",
-    price: "40 per basket",
+    price: "₦89 per hour",
+    ratings: 4.3,
   ),
   ServicePageContent(
-    name: "Multi-Fix Masters",
-    serviceRendered: "Repairing, Electronics",
-    price: "65 per hour (combo rate)",
+    name: "Service Provider 11",
+    serviceRendered: "Repairing",
+    price: "₦56 per hour",
+    ratings: 4.6,
   ),
   ServicePageContent(
-    name: "Clean Slate Crew",
+    name: "Service Provider 12",
     serviceRendered: "Cleaning",
-    price: "50 per deep clean",
+    price: "₦31 per hour",
+    ratings: 4.2,
   ),
   ServicePageContent(
-    name: "Circuit Savers",
+    name: "Service Provider 13",
     serviceRendered: "Electronics",
-    price: "45 per hour",
+    price: "₦77 per hour",
+    ratings: 3.9,
   ),
   ServicePageContent(
-    name: "Pipe Pros",
+    name: "Service Provider 14",
     serviceRendered: "Plumbing",
-    price: "90 per hour",
+    price: "₦52 per hour",
+    ratings: 4.5,
   ),
   ServicePageContent(
-    name: "Whirlwind Wash",
+    name: "Service Provider 15",
     serviceRendered: "Washing",
-    price: "35 per laundry bag",
+    price: "₦41 per hour",
+    ratings: 4.0,
   ),
 ];

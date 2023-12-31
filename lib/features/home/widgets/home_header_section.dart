@@ -10,7 +10,6 @@ import '../../../common/widgets/home-widget/settings_button_homepage.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/size_config/size_config.dart';
-import '../views/notification_page.dart';
 
 class HomeHeaderSection extends StatelessWidget {
   const HomeHeaderSection({

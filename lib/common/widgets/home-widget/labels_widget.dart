@@ -4,8 +4,10 @@ import 'package:services_ng/utils/constants/consts.dart';
 class Labels extends StatelessWidget {
   final String title;
   final String seeall;
+  final void Function()? onTap;
   const Labels({
     super.key,
+    this.onTap,
     required this.title,
     required this.seeall,
   });
@@ -22,12 +24,15 @@ class Labels extends StatelessWidget {
               color: kNeutralDarkColor,
               fontWeight: FontWeight.w500),
         ),
-        Text(
-          seeall,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontSize: 12, color: kNeutralDarkColor700),
+        GestureDetector(
+          onTap: onTap,
+          child: Text(
+            seeall,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium
+                ?.copyWith(fontSize: 12, color: kNeutralDarkColor700),
+          ),
         ),
       ],
     );

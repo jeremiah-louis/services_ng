@@ -11,6 +11,7 @@ import 'package:services_ng/utils/http_helper_functions/location.dart';
 import 'package:services_ng/utils/named_routes.dart';
 import 'package:services_ng/utils/size_config/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'common/widgets/home-widget/popular_servicesfullpage.dart';
 import 'features/authentication/views/sign_in_screen.dart';
 import 'features/authentication/views/sign_up_screen.dart';
 import 'features/home/controllers/sub_categories.dart';
@@ -25,7 +26,6 @@ Future<void> main() async {
   // Ensure Flutter widgets are initialized before accessing them
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
-
   // Shared Preferences for onboarding logic
   // Get an instance of SharedPreferences
   final pref = await SharedPreferences.getInstance();
@@ -94,6 +94,8 @@ class MainApp extends StatelessWidget {
               const HomeNavigationMenu(),
           ServicesNamedRoutes.notificationPage: (context) =>
               const NotificationPage(),
+          ServicesNamedRoutes.popularServicesPage: (context) =>
+              const PopularServicesFullPage(),
         },
       ),
     );

@@ -5,4 +5,5 @@ class ServicesNamedRoutes {
   static const signin = 'SignInServices';
   static const homenavmenu = 'homenavmenu';
   static const notificationPage = 'notificationPage';
+  static const popularServicesPage = 'popularServices';
 }

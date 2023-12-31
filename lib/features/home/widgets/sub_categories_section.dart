@@ -10,11 +10,6 @@ class SubCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: getProportionateScreenWidth(21),
-      ),
-      child: const SubCategoriesWidget(),
-    );
+    return const SubCategoriesWidget();
   }
 }

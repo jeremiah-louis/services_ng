@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../utils/size_config/size_config.dart';
-import '../models/services_data.dart';
 
 // Class for managing a list of subcategories for services, leveraging ChangeNotifier for state management.
 class SubCategoriesList extends ChangeNotifier {

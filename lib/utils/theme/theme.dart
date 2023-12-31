@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/utils/constants/consts.dart';
-import 'package:services_ng/utils/theme/custom_theme/app_bar_Theme.dart';
+import 'package:services_ng/utils/theme/custom_theme/app_bar_theme.dart';
 import 'package:services_ng/utils/theme/custom_theme/bottom_navigation_bar_theme.dart';
 import 'custom_theme/outline_button_theme.dart';
 import 'custom_theme/text_button_theme.dart';
@@ -14,7 +14,7 @@ class ServicesAppTheme {
       textTheme: ServicesTextTheme.lightTextTheme,
       scaffoldBackgroundColor: const Color(0xffFFFFFF),
       primaryColor: const Color(0xff15CE5B),
-      useMaterial3: true,
+      useMaterial3: false,
       fontFamily: 'Inter',
       brightness: Brightness.light,
       textButtonTheme: ServicesTextButtonTheme.textButtonTheme,

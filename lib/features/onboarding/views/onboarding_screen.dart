@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:services_ng/features/authentication/views/welcome_auth_screen.dart';
 import 'package:services_ng/features/onboarding/models/intro_page.dart';
 import 'package:services_ng/utils/constants/image_strings.dart';
 import 'package:services_ng/utils/constants/text_strings.dart';

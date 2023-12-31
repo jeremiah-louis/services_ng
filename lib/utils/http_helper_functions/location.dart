@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -32,11 +33,11 @@ class LocationHelper {
         state = place.administrativeArea;
       } catch (e) {
         // Handle location retrieval errors (e.g., inform user, retry, use cached data)
-        print('Error retrieving location details: $e');
+        debugPrint('Error retrieving location details: $e');
       }
     } catch (e) {
       // Handle general errors (e.g., unexpected exceptions)
-      print('Error during location process: $e');
+      debugPrint('Error during location process: $e');
     }
   }
 }

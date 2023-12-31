@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:services_ng/utils/constants/consts.dart';
 
 class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 30);
 
   final String title;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final void Function()? onBackPressed;
   final void Function()? onSuffixIconPressed;
+  final PreferredSizeWidget? bottom;
+  final Widget? flexibleSpace;
 
   const MyCustomAppBar({
     Key? key,
@@ -17,6 +20,8 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.suffixIcon,
     this.onBackPressed,
     this.onSuffixIconPressed,
+    this.bottom,
+    this.flexibleSpace,
   }) : super(key: key);
 
   @override
@@ -24,6 +29,9 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(title),
       leadingWidth: 24,
+      bottom: bottom,
+      flexibleSpace: flexibleSpace,
+
       leading: prefixIcon != null
           ? IconButton(
               icon: Icon(
@@ -36,7 +44,10 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         if (suffixIcon != null)
           IconButton(
-            icon: Icon(suffixIcon),
+            icon: Icon(
+              suffixIcon,
+              color: kNeutralDarkColor700,
+            ),
             onPressed: onSuffixIconPressed,
           ),
       ],

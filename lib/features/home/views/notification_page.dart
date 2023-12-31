@@ -10,7 +10,7 @@ class NotificationPage extends StatelessWidget {
     return const Scaffold(
       appBar: MyCustomAppBar(
         title: 'Notifications',
-        suffixIcon: Iconsax.more4,
+        suffixIcon: Icons.more_horiz,
         prefixIcon: Iconsax.arrow_left_24,
       ),
       body: Column(),
