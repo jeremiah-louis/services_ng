@@ -10,7 +10,7 @@ class SubCategoriesList extends ChangeNotifier {
   // List of available popular service subcategories.
   List<String> popularServices = [
     'All',
-    'Repairing ',
+    'Repairing',
     'Cleaning',
     'Electronics',
     'Plumbing',

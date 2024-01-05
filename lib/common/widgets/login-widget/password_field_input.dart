@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:services_ng/features/authentication/models/password_authentication.dart';
 import '../../../utils/constants/consts.dart';
+import '../../../utils/size_config/size_config.dart';
 
 class PasswordFieldServices extends StatelessWidget {
   final String inputFieldTitle;
@@ -23,6 +24,7 @@ class PasswordFieldServices extends StatelessWidget {
               .titleMedium
               ?.copyWith(color: Colors.black),
         ),
+        SizedBox(height: getProportionateScreenHeight(6)),
         TextFormField(
           keyboardType: TextInputType.emailAddress,
           cursorColor: kPrimaryGreenColor,

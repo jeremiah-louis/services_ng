@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:services_ng/utils/constants/consts.dart';
+import 'package:services_ng/utils/size_config/size_config.dart';
 
 class FormFieldServices extends StatelessWidget {
   final String inputFieldTitle;
@@ -24,6 +25,7 @@ class FormFieldServices extends StatelessWidget {
               .titleMedium
               ?.copyWith(color: Colors.black),
         ),
+        SizedBox(height: getProportionateScreenHeight(6)),
         TextFormField(
           keyboardType: TextInputType.emailAddress,
           cursorColor: kPrimaryGreenColor,

@@ -5,9 +5,8 @@ import '../../../utils/constants/consts.dart';
 import '../../../utils/size_config/size_config.dart';
 
 class ServicesTabBar extends StatelessWidget implements PreferredSizeWidget {
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  
   const ServicesTabBar({
     super.key,
     required this.subCategories,
@@ -60,4 +59,8 @@ class ServicesTabBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
+  
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => throw UnimplementedError();
 }

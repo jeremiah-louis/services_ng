@@ -68,7 +68,7 @@ class SignInServices extends StatelessWidget {
                   height: getProportionateScreenHeight(16),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
