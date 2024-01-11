@@ -5,11 +5,11 @@ class SubCategoriesList extends ChangeNotifier {
   // Tracks the index of the currently selected subcategory.
   int currentIndex = 0;
   bool isSelected = false;
-  List selectedCategory = [];
+  String selectedChip = '';
+  String labelText = '';
 
   // List of available popular service subcategories.
   List<String> popularServices = [
-    'All',
     'Repairing',
     'Cleaning',
     'Electronics',
@@ -17,7 +17,7 @@ class SubCategoriesList extends ChangeNotifier {
     'Washing'
   ];
 
-  List<Widget> popularServicesPage = [];
+  List<String> selectedCategory = [];
 
   // Updates the current index and notifies listeners to trigger UI updates.
   void updateCurrentIndex(int index) {
@@ -25,8 +25,13 @@ class SubCategoriesList extends ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleSelected() {
-    isSelected = !isSelected;
+  void toggle(bool selected, String e) {
+    selectedChip = selected ? e : '';
+    notifyListeners();
+  }
+
+  void updateSelectedCategory(String e) {
+    selectedCategory.contains(e);
     notifyListeners();
   }
 

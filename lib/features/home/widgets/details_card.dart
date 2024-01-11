@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../common/widgets/details_text.dart';
 import '../../../utils/constants/consts.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/size_config/size_config.dart';
+import '../controllers/sub_categories.dart';
 import '../models/services_data.dart';
 
 class DetailsCard extends StatelessWidget {
@@ -16,10 +18,16 @@ class DetailsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final subCategories = context.watch<SubCategoriesList>();
+    final filteredList = services
+        .where((element) =>
+            subCategories.selectedCategory.isEmpty ||
+            subCategories.selectedCategory.contains(element.serviceRendered))
+        .toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: physics,
-      itemCount: services.length,
+      itemCount: filteredList.length,
       itemBuilder: (context, index) => Container(
           decoration: BoxDecoration(
               color: Colors.white,
@@ -49,21 +57,21 @@ class DetailsCard extends StatelessWidget {
                     children: [
                       DetailsText(
                         color: kNeutralDarkColor,
-                        text: services[index].name,
+                        text: filteredList[index].name,
                         weight: FontWeight.normal,
                         size: 10,
                       ),
                       SizedBox(width: getProportionateScreenHeight(4)),
                       DetailsText(
                         color: kNeutralDarkColor,
-                        text: services[index].serviceRendered,
+                        text: filteredList[index].serviceRendered,
                         weight: FontWeight.w600,
                         size: 12,
                       ),
                       SizedBox(width: getProportionateScreenHeight(4)),
                       DetailsText(
                         color: kPrimaryGreenColor,
-                        text: services[index].price,
+                        text: filteredList[index].price,
                         weight: FontWeight.w600,
                         size: 12,
                       ),
@@ -74,7 +82,7 @@ class DetailsCard extends StatelessWidget {
                           SizedBox(width: getProportionateScreenWidth(2)),
                           DetailsText(
                             color: kNeutralDarkColor,
-                            text: services[index].ratings.toString(),
+                            text: filteredList[index].ratings.toString(),
                             weight: FontWeight.w600,
                             size: 12,
                           ),

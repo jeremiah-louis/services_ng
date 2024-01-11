@@ -49,6 +49,7 @@ class HomeScreen extends StatelessWidget {
               const PopularServicesSection(),
               SizedBox(height: getProportionateScreenHeight(12)),
               const SubCategoriesWidget(),
+              const DetailsCard(physics: NeverScrollableScrollPhysics())
             ],
           ),
         ),
